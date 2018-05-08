@@ -1,10 +1,8 @@
 ---
-title: "Zadanie6"
+title: "Zadanie_6"
 author: "Magdalena_Glodek"
 date: "8 maja 2018"
-output:
-  html_document: default
-  pdf_document: default
+output: html_document 
 ---
 
 ```{r setup, include=FALSE}
@@ -73,9 +71,6 @@ geom_point() +
 labs(title = "Cena a czystoœæ", x = "Czystoœæ", y = "Cena")
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 
 
