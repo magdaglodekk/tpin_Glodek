@@ -2,7 +2,9 @@
 title: "Zadanie6"
 author: "Magdalena_Glodek"
 date: "8 maja 2018"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -58,15 +60,15 @@ library(ggplot2)
 diamonds %>% filter(color == "E")
 ```
 
-#### Cena w zale¿noœci od czystoœci 
+#### Cena w zale¿noœci od czystoœci
 
 ```{r}
 library(tidyverse)
 library(ggplot2)
 
-diamenty <- diamonds 
+diamenty<- diamonds 
 
-ggplot(diamenty, aes(price, clarity)) + 
+ggplot(diamonds, aes(price, clarity)) + 
 geom_point() +
 labs(title = "Cena a czystoœæ", x = "Czystoœæ", y = "Cena")
 ```
