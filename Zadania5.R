@@ -12,7 +12,7 @@ library(dplyr)
 
 library(readr)
 
-movies <- read_csv("zadania info/zajecia5/movies.csv")
+movies <- read_csv("zadania info/zajecia #5/movies.csv")
 
 View(movies)
 
@@ -34,7 +34,7 @@ filter(movies, year == 2005, Comedy)
 
 
 
-movies % > % select(title, year, budget) % > % arrange(desc(budget))
+movies %>% select(title, year, budget) %>% arrange(desc(budget))
 
 
 
@@ -44,9 +44,9 @@ movies % > % select(title, year, budget) % > % arrange(desc(budget))
 
 
 
-filter(movies, year == 1990, rating, Animation) % > %
+filter(movies, Animation == 1, year >=1990 & year < 2000) %>%
   
-  arrange()
+  arrange(desc(rating))
 
 
 
@@ -56,6 +56,18 @@ filter(movies, year == 1990, rating, Animation) % > %
 
 
 
-filter(movies, length, Drama) % > %
+dramaty <- filter(movies, Drama == 1)
+
+arrange(dramaty, desc(length))
+
+
+
+
+
+# zad. 5-6
+
+
+
+mpaa_rating <- group_by(movies, mpaa) %>%
   
-  arrange()
+  summarise (srednia = mean(rating), odchylenie = mad(rating))
