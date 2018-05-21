@@ -1,46 +1,30 @@
-library(tidyverse)
-
-library(dplyr)
-
-
-
-
-
-# zad. 5-1
-
-
+library (tidyverse)
 
 library(readr)
 
-movies <- read_csv("zadania info/zajecia #5/movies.csv")
+movies <- read_csv("movies.csv")
 
 View(movies)
 
 
 
-
-
-# zad. 5-2
-
-
-
-filter(movies, year == 2005, Comedy)
+#zadanie 5-2
 
 
 
-
-
-# zad. 5-3
-
-
-
-movies %>% select(title, year, budget) %>% arrange(desc(budget))
+filter(movies, year == 2005, Comedy == 1)
 
 
 
+# zadanie 5-3
 
 
-# zad. 5-4
+
+select(movies, title, year, budget) %>% arrange(desc(budget))
+
+
+
+#zadanie 5-4
 
 
 
@@ -50,9 +34,7 @@ filter(movies, Animation == 1, year >=1990 & year < 2000) %>%
 
 
 
-
-
-# zad. 5-5
+#zadanie 5-5
 
 
 
@@ -62,12 +44,13 @@ arrange(dramaty, desc(length))
 
 
 
-
-
-# zad. 5-6
+#zadanie 5-6
 
 
 
 mpaa_rating <- group_by(movies, mpaa) %>%
   
   summarise (srednia = mean(rating), odchylenie = mad(rating))
+
+
+
